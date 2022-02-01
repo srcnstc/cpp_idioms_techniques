@@ -14,7 +14,7 @@ public:
     }
 
     template<typename Con>
-    operator Con()
+    operator Con() const
     {
         Con con;
         for (size_t i{ m_from }; i < m_to; ++i)
