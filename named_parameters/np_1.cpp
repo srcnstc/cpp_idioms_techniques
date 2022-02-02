@@ -1,3 +1,5 @@
+//parametre değişkeni sayısı fazla olduğunda isimlendirilmiş argüman kullanmak bir avantaj sağlıyor.
+
 #include <string>
 
 class File {
