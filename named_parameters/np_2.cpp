@@ -32,7 +32,7 @@ private:
     std::string m_filename;
     bool m_readonly{};
     bool m_create_if_not_exists{};
-    unsigned m_block_size{ 4096 };     // defaults to 4096 [for example]
+    unsigned m_block_size{ 4096 };     
 };
 
 
