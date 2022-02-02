@@ -1,25 +1,26 @@
 #include <stdexcept>
-#include <string>
 #include <vector>
 #include <iostream>
 #include <set>
+#include <list>
 
 class Range {
-    const size_t m_from, m_to;
+    const int m_from;
+    const int m_to;
 public:
-    Range(size_t from, size_t to) : m_from(from), m_to(to) 
+    Range(int from, int to) : m_from(from), m_to(to)
     {
-        if (m_from > m_to) 
-          throw std::logic_error{"invalid range values\n"};
+        if (m_from > m_to)
+            throw std::runtime_error{ "invalid range values\n" };
     }
 
     template<typename Con>
     operator Con() const
     {
         Con con;
-        for (size_t i{ m_from }; i < m_to; ++i)
+        for (int i{ m_from }; i < m_to; ++i)
             con.insert(con.end(), i);
-        
+
         return con;
     }
 };
@@ -37,4 +38,11 @@ int main()
     std::set<int> iset = Range(5, 12);
     for (auto i : iset)
         std::cout << i << ' ';
+
+    std::cout << '\n';
+    std::list<int> ilist = Range(-5, 3);
+    for (auto i : ilist)
+        std::cout << i << ' ';
+
+    std::cout << '\n';
 }
