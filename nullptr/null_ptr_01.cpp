@@ -5,7 +5,7 @@ class null_ptr_t
 {
 public:
     template<typename T>
-    constexpr operator T*()const {return 0;}  // for non-member pointer
+    constexpr operator T* ()const { return 0; }  // for non-member pointer
 
     template<typename C, typename T>
     constexpr operator T C::* () const { return 0; } // for member pointer
@@ -14,40 +14,43 @@ private:
 } null_ptr;
 
 
-void func(int) 
+void func(int)
 {
-    std::cout << "func(int)" << '\n'; 
+    std::cout << "func(int)" << '\n';
 }
 
-void func(int *)
+void func(int*)
 {
     std::cout << "func(int *)" << '\n';
 }
 
-void foo(char*) { std::cout << "foo char*" << std::endl; }
+void foo(char*) 
+{
+    std::cout << "foo char*" << '\n'; 
+}
 
 class Nec {
 public:
-    void f() {}
+    void f(int) {}
 };
 
 int main()
 {
-    int* p1 = null_ptr;
-    
-    if (!p1) 
-        std::cout << "p1 is null_ptr" << std::endl;
-    
-    if (p1 == null_ptr) 
-        std::cout << "p1 is null_ptr" << '\n';
+    double* dptr = null_ptr;
+
+    if (!dptr)
+        std::cout << "dptr is null_ptr" << std::endl;
+
+    if (dptr == null_ptr)
+        std::cout << "dptr is null_ptr" << '\n';
 
     int x = 10;
-    int* p2 = &x;
-    
-    if (p2 != null_ptr) 
-        std::cout << "p2 is not null_ptr" << '\n';
+    int* iptr = &x;
 
-    void (Nec::*fp)() = null_ptr;
+    if (iptr != null_ptr)
+        std::cout << "iptr is not null_ptr" << '\n';
+
+    void (Nec:: * fp)(int) = null_ptr;
 
     func(null_ptr);
     foo(null_ptr);
