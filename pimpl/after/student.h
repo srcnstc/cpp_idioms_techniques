@@ -3,12 +3,12 @@
 #include <string>
 #include <memory>
 
-class PStudent {
+class Student {
 public:
-	PStudent(std::string name, std::string surname);
-	PStudent(PStudent &&);
-	PStudent& operator=(PStudent &&);
-	~PStudent();
+	Student(std::string name, std::string surname);
+	Student(Student &&);
+	Student& operator=(Student &&);
+	~Student();
 	void add_grade(int);
 	void print()const;
 private:
