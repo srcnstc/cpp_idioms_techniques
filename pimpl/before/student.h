@@ -9,6 +9,7 @@ public:
 	Student(std::string name, std::string surname);
 	void add_grade(int);
 	void print()const;
+	// other public members
 	
 private:
 	std::string m_name;
