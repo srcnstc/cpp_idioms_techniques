@@ -1,11 +1,8 @@
-#include "pstudent.h"
+#include "student.h"
 #include <vector>
 #include <iostream>
 
-
-
-
-class PStudent::pimpl{
+class Student::pimpl{
 public:
 	pimpl(std::string name, std::string surname) : 
 	m_name{std::move(name)},
@@ -31,21 +28,21 @@ private:
 	// other private members & private functions
 };
 
-PStudent::PStudent(std::string name, std::string surname) :
+Student::Student(std::string name, std::string surname) :
 	p{ std::make_unique<pimpl>(std::move(name), std::move(surname)) } {}
 
-PStudent::PStudent(PStudent&&) = default;
+Student::Student(Student&&) = default;
 
-PStudent& PStudent::operator=(PStudent&&) = default;
+Student& Student::operator=(Student&&) = default;
 
-PStudent::~PStudent() = default;
+Student::~Student() = default;
 
-void PStudent::add_grade(int grade)
+void Student::add_grade(int grade)
 {
 	p->add_grade(grade);
 }
 
-void PStudent::print()const
+void Student::print()const
 {
 	p->print();
 }
