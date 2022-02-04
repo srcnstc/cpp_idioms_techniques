@@ -1,4 +1,4 @@
-#include "logger.h"
+#include "placement.h"
 #include "helper.h"
 #include <fstream>
 #include <iostream>
@@ -13,7 +13,6 @@ public:
 private:
 	std::ofstream ofs;
 };
-
 
 Logger::Logger()
 {
