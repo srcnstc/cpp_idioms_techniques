@@ -1,17 +1,17 @@
 #include <utility>
 
-template <class F>
+template <class Func>
 class scope_guard
 {
 public:
-    explicit scope_guard(F f) noexcept
-        : f_(std::move(f)), invoke_(true) {}
+    explicit scope_guard(Func f) noexcept
+        : m_f(std::move(f)), m_call(true) {}
 
     scope_guard(scope_guard&& other) noexcept
-        : f_(std::move(other.f_)),
-        invoke_(other.invoke_)
+        : m_f(std::move(other.m_f)),
+        m_call(other.m_call)
     {
-        other.invoke_ = false;
+        other.m_call = false;
     }
 
     scope_guard(const scope_guard&) = delete;
@@ -19,36 +19,37 @@ public:
 
     ~scope_guard() noexcept
     {
-        if (invoke_) f_();
+        if (m_call) 
+            m_f();
     }
 
     void release()noexcept
     {
-        invoke_ = false;
+        m_call = false;
     }
 
 private:
-    F f_;
-    bool invoke_;
+    Func m_f;
+    bool m_call;
 };
 
-template <class F>
-scope_guard<F> finally(const F& f) noexcept
+template <class Func>
+scope_guard<Func> finally(const Func& f) noexcept
 {
-    return scope_guard<F>(f);
+    return scope_guard<Func>(f);
 }
 
+
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+
+
 #include <iostream>
-
-
-using namespace std;
 
 int main()
 {
     std::cout << "1...\n";
-    auto f = [] {
-        cout << "necati ergin\n";
-    };
+    auto f = [] { std::cout << "necati ergin\n";};
     if (1) {
         scope_guard _{ f };
         //...
