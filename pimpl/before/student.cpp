@@ -1,16 +1,19 @@
 #include "student.h"
 #include <iostream>
 
-
 Student::Student(std::string name, std::string surname)
 	: m_name{std::move(name)}, m_surname{std::move(surname)}
 {
 }
 
+//==========================================================================
+
 void Student::add_grade(int grade)
 {
 	m_grades.emplace_back(grade);
 }
+
+//==========================================================================
 
 void Student::print() const
 {
