@@ -48,6 +48,6 @@ int main()
         Nec nec;
     }
     catch (const std::exception &e) {
-        std::cout << "exceptşon caught: " << e.what() << std::endl;
+        std::cout << "exception caught: " << e.what() << std::endl;
     }
 }
