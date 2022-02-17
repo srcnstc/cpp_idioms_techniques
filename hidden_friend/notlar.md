@@ -8,3 +8,9 @@
 + İstenmeyen örtülü tür dönüşümleri engellenmiş oluyor. (Örneğe bakınız)
 
 Derste ayrıntılı olarak anlatıyorum.
+
+okumakta fayda olan bağlantılar:
+
+https://www.justsoftwaresolutions.co.uk/cplusplus/hidden-friends.html
+
+
