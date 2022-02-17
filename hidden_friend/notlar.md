@@ -13,6 +13,7 @@ Derste ayrıntılı olarak anlatıyorum.
 
 okumakta fayda olan bağlantılar:
 
-https://www.justsoftwaresolutions.co.uk/cplusplus/hidden-friends.html
-https://quuxplusone.github.io/blog/2019/04/26/what-is-adl/
+https://www.justsoftwaresolutions.co.uk/cplusplus/hidden-friends.html <br>
+https://quuxplusone.github.io/blog/2019/04/26/what-is-adl/ <br>
+https://blog.panicsoftware.com/friends-and-where-to-find-them/ <br>
 
