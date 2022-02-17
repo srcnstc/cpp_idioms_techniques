@@ -1,6 +1,6 @@
 #### non-virtual interface
 
-+ İdiyomu ilk tanıtan _Herb Sutter_:
++ İdiyomu ilk tanıtan _Herb Sutter_: <br>
 <<Prefer to use Template Method to make the interface stable and nonvirtual, 
 while delegating customizable work to nonpublic virtual functions that are responsible for implementing the customizable behavior. >>
 
@@ -19,7 +19,15 @@ Sanal fonksiyonları public yaptığımızda bunları interface ile implementasy
 + public sanal arayüz bir sınıfın arayüzünde türemiş sınıflara pre-conditions/post_conditions dayatmasını sağlamıyor. 
 Çünkü bu fonksiyonlar çağrıldığında türemiş sınıfların override'ları çağrılmış olacak.
 
++ Bu şekilde türemiş sınıfların taban sınıfın yerine geçebilirliği taban sınıf tarafından kontrol edilebiliyor.
+
++ verimlilik _(efficiency)_ kaygısı varsa preconditions ve postconditions sınama kodları duruma göre sadece debug sürümünde yer alabilir. 
 + implementasyondaki bir değişiklik sınıfın _public_ arayüzünde bir değişimi gerektirmiyor. Taban sınıf daha sağlam _(robust)_ oluyor. 
 Böylece client kodlarda değişiklik yapılması gerekmiyor.
 
 + taban sınıf kendi sözleşmesini dayatabiliyor. (preconditions - postconditions)
+
++ belirli kodlar türemiş sınıfların implementasyonunda tekrar etmiyor. Bunlar taban sınıfın istediği noktada toplanmış ve kullanılmış oluyorlar. (yani taban sınıdfın sanal olmayan fonksiyonu içinde)
+
+
+
