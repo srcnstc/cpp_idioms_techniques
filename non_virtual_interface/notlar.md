@@ -1,5 +1,9 @@
 #### non-virtual interface
 
++ İdiyomu ilk tanıtan _Herb Sutter_:
+<<Prefer to use Template Method to make the interface stable and nonvirtual, 
+while delegating customizable work to nonpublic virtual functions that are responsible for implementing the customizable behavior. >>
+
 + Bu idiyom _template method_ tasarım kalıbının özel bir kullanım senaryosu olarak görülebilir.
 
 + Sınıfın sanal fonksiyonlarını _public_ yapmak yerine _private_ ya da _protected_ yapıyoruz. 
