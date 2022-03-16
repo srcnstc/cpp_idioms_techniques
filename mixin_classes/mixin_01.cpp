@@ -1,9 +1,7 @@
-### Mixin sınıflar
+// Mixin sınıflar bir başka sınıfa eklenecek jenerik bir davranışı tanımlayan sınıf şablonlarıdır. 
+// Bu davranış hangi sınıfa eklenecek ise mixin sınıf o sınıftan kalıtım yoluyla oluşturulacak şekilde tasarlanır.
 
-Mixin sınıflar bir başka sınıfa eklenecek jenerik bir davranışı tanımlayan sınıf şablonlarıdır. <br>
-Bu davranış hangi sınıfa eklenecek ise mixin sınıf o sınıftan kalıtım yoluyla oluşturulacak şekilde tasarlanır.
 
-```
 #include <string>
 #include <iostream>
 
@@ -64,4 +62,4 @@ int main()
     name.print_ntimes(3);
     make_repeat_printable(Name("Nuri", "Yilmaz")).print_ntimes(6);
 }
-```
+
